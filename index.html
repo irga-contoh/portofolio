@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nama Anda | Portofolio</title>
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --text: #1c1917;
+      --muted: #57534e;
+      --accent: #2563eb;
+      --border: #e7e5e4;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0c0a09;
+        --surface: #1c1917;
+        --text: #fafaf9;
+        --muted: #a8a29e;
+        --accent: #60a5fa;
+        --border: #292524;
+        color-scheme: dark;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    header .container {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 64px;
+    }
+    .logo { font-weight: 700; text-decoration: none; color: var(--text); }
+    nav a {
+      color: var(--muted); text-decoration: none;
+      margin-left: 1.5rem; font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .hero { padding: 6rem 0 4rem; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.15; margin-bottom: 1rem; }
+    .hero p { color: var(--muted); font-size: 1.15rem; max-width: 620px; }
+    .btn {
+      display: inline-block; margin-top: 2rem;
+      padding: 0.75rem 1.5rem; border-radius: 8px;
+      background: var(--accent); color: #fff;
+      text-decoration: none; font-weight: 600;
+    }
+
+    section { padding: 4rem 0; border-top: 1px solid var(--border); }
+    h2 { font-size: 1.75rem; margin-bottom: 2rem; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+    .about-grid p { color: var(--muted); margin-bottom: 1rem; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .skills span {
+      padding: 0.35rem 0.8rem; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--surface);
+      font-size: 0.9rem;
+    }
+
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+    .card .thumb {
+      height: 140px; border-radius: 8px; margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent), #9333ea);
+      opacity: 0.85;
+    }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    .card a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+    form { display: grid; gap: 1rem; max-width: 560px; }
+    input, textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1px solid var(--border); border-radius: 8px;
+      background: var(--surface); color: var(--text);
+      font: inherit;
+    }
+    input:focus, textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
+    textarea { min-height: 140px; resize: vertical; }
+    button {
+      justify-self: start; padding: 0.75rem 1.5rem;
+      background: var(--accent); color: #fff; border: 0;
+      border-radius: 8px; font: inherit; font-weight: 600; cursor: pointer;
+    }
+    #status { color: var(--muted); font-size: 0.9rem; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0; text-align: center;
+      color: var(--muted); font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      .about-grid { grid-template-columns: 1fr; }
+      nav a { margin-left: 1rem; }
+      .hero { padding: 4rem 0 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="#" class="logo">Nama Anda</a>
+    <nav>
+      <a href="#tentang">Tentang</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="hero">
+    <h1>Halo, saya Nama Anda.<br>Saya membuat produk digital yang rapi dan bermanfaat.</h1>
+    <p>Desainer & pengembang web dengan fokus pada antarmuka yang sederhana, cepat, dan mudah digunakan.</p>
+    <a href="#proyek" class="btn">Lihat Proyek Saya</a>
+  </div>
+
+  <section id="tentang">
+    <h2>Tentang Saya</h2>
+    <div class="about-grid">
+      <div>
+        <p>Keahlian saya</p>
+      </div>
+      <div>
+        <p>Saya memiliki pengalaman lebih dari 3 tahun dalam membangun website dan aplikasi web. Saya percaya desain yang baik adalah desain yang membuat pengguna merasa terbantu tanpa perlu berpikir panjang.</p>
+        <p>Di waktu luang, saya suka belajar hal baru dan berbagi pengetahuan melalui tulisan.</p>
+        <div class="skills">
+          <span>HTML & CSS</span>
+          <span>JavaScript</span>
+          <span>React</span>
+          <span>UI/UX Design</span>
+          <span>Figma</span>
+          <span>Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyek">
+    <h2>Proyek Pilihan</h2>
+    <div class="projects">
+      <article class="card">
+        <div class="thumb"></div>
+        <h3>Aplikasi Manajemen Tugas</h3>
+        <p>Aplikasi web untuk mencatat dan melacak tugas harian dengan fitur kategori dan pengingat.</p>
+        <a href="#">Lihat Detail →</a>
+      </article>
+      <article class="card">
+        <div class="thumb"></div>
+        <h3>Website Toko Online</h3>
+        <p>Halaman toko dengan keranjang belanja, pencarian produk, dan integrasi pembayaran.</p>
+        <a href="#">Lihat Detail →</a>
+      </article>
+      <article class="card">
+        <div class="thumb"></div>
+        <h3>Dashboard Analitik</h3>
+        <p>Dashboard interaktif untuk memvisualisasikan data penjualan dalam grafik yang mudah dibaca.</p>
+        <a href="#">Lihat Detail →</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Hubungi Saya</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Nama lengkap" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea id="message" placeholder="Pesan Anda" required></textarea>
+      <button type="submit">Kirim Pesan</button>
+      <p id="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Nama Anda. Dibuat dengan HTML & CSS.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    document.getElementById('status').textContent =
+      'Terima kasih, ' + name + '! Pesan Anda sudah diterima (contoh, belum terkirim ke server).';
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
